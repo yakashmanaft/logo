@@ -62,6 +62,9 @@ body {
 	@media (max-width: $md3 + px) {
 		padding: 0px 10px;
 	}
+	@media (min-width: $md3 + px) {
+		padding: 0px 20px;
+	}
 }
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
 
@@ -93,6 +96,7 @@ body {
 	// .page__container
 
 	&__container {
+		padding: 0px 0px 20px 0px;
 		@media (min-width: $md2+px) {
 			display: flex;
 		}
@@ -156,6 +160,15 @@ body {
 	// .page__products
 
 	&__products {
+		
+	}
+
+	&__brands{
+		margin: 0px 0px 32px 0px;
+	}
+
+	&__text {
+		
 	}
 }
 
@@ -410,6 +423,15 @@ body {
 		flex: 0 1 33.333%;
 		padding: 0px 15px;
 		margin: 0px 0px 30px 0px;
+		@media (max-width: $md1+px) and (min-width: $md2+px) {
+			flex: 0 1 50%;
+		}
+		@media (max-width: 840px){
+			flex: 0 1 50%;
+		}
+		@media (max-width: 600px){
+			flex: 1 1 100%;
+		}
     }
 }
 
@@ -417,7 +439,10 @@ body {
 	padding: 15px;
 	position: relative;
 	overflow: hidden;
+	height: 100%;
 	border: 1px solid #f5f5f5;
+	display: flex;
+	flex-direction: column;
 	// .item-product__labels
 
 	&__labels {
@@ -452,7 +477,7 @@ body {
 		padding: 10px 0;
 		img {
 			max-width: 100%;
-			max-height: 175px;
+			max-height: 245px;
 		}
 	}
 
@@ -460,6 +485,9 @@ body {
 
 	&__body {
 		padding: 0 10px;
+		flex: 1 1 auto;
+		display: flex;
+		flex-direction: column;
 	}
 
 	// .item-product__title
@@ -471,7 +499,9 @@ body {
 		line-height: 24px;
 		display: inline-block;
 		margin-bottom: 5px;
+		flex: 1 1 auto;
 		span {
+			display: block;
 			font-weight: 900;
 		}
 		@media (min-width: $md2 + px) {
@@ -484,6 +514,7 @@ body {
 	// .item-product__footer
 
 	&__footer {
+		transition: all 0.3s ease 0s;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
@@ -530,12 +561,16 @@ body {
 		top: 0;
 		left: 0;
 		transition: transform 0.3s ease 0s;
-		transform: translate(-100%, 0px);
+		transform: translate(-110%, 0px);
 	}
 	@media (min-width: $md2+px) {
 		&:hover{
 			.item-product__hover {
 				transform: translate(0px, 0px);
+			}
+			.item-product__title,
+			.item-product__footer {
+				opacity: 0;
 			}
 		}
 	}
@@ -561,14 +596,17 @@ body {
 		}
 	}
 	&__options {
+		padding: 10px 0px 0px 0px;
+	}
+	&__body {
 		flex: 1 1 auto;
-
 	}
 	&__cart {
 		background: url(../img/icons/cart-orange.png) 0 0 no-repeat;
 		width: 57px;
 		height: 57px;
 		margin: 0px auto 25px auto;
+		display: block;
 	}
 	&__footer {
 		display: flex;

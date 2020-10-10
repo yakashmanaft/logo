@@ -1,5 +1,31 @@
 //<ОСНОВНОЙ БЛОК>====================================================================================================
-
+._arrow {
+	background: url('../img/icons/sl_arrow.png') 0 0 no-repeat;
+	width: 35px;
+	height: 30px;
+	cursor: pointer;
+	@media (min-width: $md2+px) {
+		&:hover {
+			background: url('../img/icons/sl_arrow_h.png') 0 0 no-repeat;
+		}
+	}
+}
+._arrow_prev {
+	transform: rotate(-180deg);
+	margin-top: 5px;
+	@media (min-width: $md2+px) {
+		&:hover {
+			transform: rotate(0deg);
+		}
+	}
+}
+._arrow_next{
+	@media (min-width: $md2+px) {
+		&:hover {
+			transform: rotate(-180deg);
+		}
+	}
+}
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 //<ГОТОВЫЕ КЛАССЫ>====================================================================================================
