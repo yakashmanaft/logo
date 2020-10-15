@@ -262,7 +262,8 @@
     }
     &__body {
         padding: 45px 35px;
-        background: url('../img/bg_text.jpg') 0 0 no-repeat;
+        background: url('../img/bg_text.jpg') 0 0 repeat;
+        
     }
     &__title {
         color: #22b7ca;
@@ -281,6 +282,7 @@
         flex: 0 1 50%;
         padding: 0px 30px;
         color: #ffffff;
+        position: relative;
         p {
             font-size: 12px;
             line-height: 20px;
@@ -310,6 +312,11 @@
                 background: url('../img/icons/li_arrow.png') left 1px no-repeat;
             }
         }
+    }
+    &__image {
+        position: absolute;
+        right: -100px;
+        bottom: -310px;
     }
 }
 
