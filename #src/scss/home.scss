@@ -259,11 +259,19 @@
 //====================================================================================================
 .text-block {
     &__container {
+        @media (max-width: $md2 + px){
+            padding: 0;
+        }
+        @media (max-width: $md3 + px){
+            padding: 0;
+        }
     }
     &__body {
-        padding: 45px 35px;
+        padding: 45px 35px 15px 35px;
         background: url('../img/bg_text.jpg') 0 0 repeat;
-        
+        @media (max-width: $md2 + px){
+            padding: 25px 20px 15px 20px;
+        }
     }
     &__title {
         color: #22b7ca;
@@ -275,14 +283,19 @@
         margin: 0px 0px 28px 0px;
     }
     &__row {
-        display: flex;
-        margin: 0px -30px;
+        @media (min-width: $md2 + px){
+            display: flex;
+            margin: 0px -30px;
+        }
     }
     &__column {
-        flex: 0 1 50%;
-        padding: 0px 30px;
         color: #ffffff;
         position: relative;
+        margin: 0px 0px 30px 0px;
+        @media (min-width: $md2 + px){
+            flex: 0 1 50%;
+            padding: 0px 30px;
+        }
         p {
             font-size: 12px;
             line-height: 20px;
@@ -311,12 +324,20 @@
                 display: inline-block;
                 background: url('../img/icons/li_arrow.png') left 1px no-repeat;
             }
+            @media (max-width: $md1+px) {
+                br{
+                    display: none;
+                }
+            }
         }
     }
     &__image {
         position: absolute;
         right: -100px;
         bottom: -310px;
+        @media (max-width: $md1+px) {
+            display: none;
+        }
     }
 }
 

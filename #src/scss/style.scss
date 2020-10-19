@@ -96,7 +96,6 @@ body {
 	// .page__container
 
 	&__container {
-		padding: 0px 0px 20px 0px;
 		@media (min-width: $md2+px) {
 			display: flex;
 		}
@@ -122,6 +121,7 @@ body {
 	// .page__content
 
 	&__content {
+		margin: 0px 0px 30px 0px;
 		@media (min-width: $md2+px) {
 			flex: 1 1 auto;
 			min-width: 0;
@@ -168,11 +168,11 @@ body {
 	}
 
 	&__text {
-		
+		margin: 0px 0px 38px;
 	}
 
 	&__info-menu {
-
+		margin: 0px 0px 38px 0px;
 	}
 }
 
@@ -995,25 +995,62 @@ body {
 //======================================================================================================
 
 .info-menu {
+	border-top: 3px dashed #dadada;
+	border-bottom: 3px dashed #dadada;
+	padding: 10px 0;
 	&__container {
 
 	}
 	&__body {
 		display: inline-block;
+		@media (max-width: $md3 + px) {
+			display: flex;
+		}
 	}
 	&__line {
 		display: flex;
+		padding: 15px;
 		align-items: center;
+		border-bottom: 1px solid #b0b0b0;
+		&:last-child{
+			border: 0;
+		}
+		@media (max-width: $md3 + px) {
+			display: block;
+			flex: 0 1 50%;
+			border: 0;
+		}
 	}
 	&__label {
 		font-weight: 900;
+		color: #333333;
+		margin: 0px 35px 0px 0px;
+		@media (max-width: $md3 + px) {
+			margin: 0px 0px 10px 0px;
+		}
 	}
 	&__list {
-		display: flex;
-		align-items: center;
+		@media (min-width: $md3 + px) {
+			display: flex;
+			align-items: center;
+		}
+		li {
+			margin: 0px 30px 0px 0px;
+			@media (max-width: $md3 + px) {
+				margin: 0px 0px 10px 0px;
+				&:last-child {
+					margin: 0px 0px 0px 0px;
+				}
+			}
+		}
 	}
 	&__link {
-
+		color: #1ab9ce;
+		font-size: 12px;
+		font-weight: 300;
+		&:hover {
+			color: #333333;
+		}
 	}
 }
 
