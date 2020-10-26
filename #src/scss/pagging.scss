@@ -4,16 +4,42 @@
 	justify-content: center;
 	// .pagging__arrow
 	&__arrow {
+		width: 30px;
+		height: 25px;
+		cursor: pointer;
+		background: url('../img/icons/sl_arrow_grey.png') 0 0 / 100% no-repeat;
+		@media(min-width: $md2+px) {
+			&:hover {
+				background: url('../img/icons/sl_arrow_h.png') 0 0 / 100% no-repeat;
+			}
+		}
+		&:first-child {
+			
+		}
+		&:last-child {
+			transform: rotate(-180deg);
+		}
 	}
 	// .pagging__list
 	&__list {
+		margin: 0px 35px;
 		display: flex;
 		li {
 		}
 	}
 	// .pagging__item
 	&__item {
+		width: 33px;
+		height: 33px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		color: #333;
+		font-weight: 900;
 		&._active {
+			color: #fff;
+			background-color: #fd8424;
 		}
 	}
 }

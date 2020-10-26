@@ -24,7 +24,6 @@ if (isMobile.any()) {
 }
 
 
-
 let menuPageBurger = document.querySelector('.menu-page__burger');
 let menuPageBody = document.querySelector('.menu-page__body');
 
@@ -93,4 +92,13 @@ function setPriceValues() {
     }
 
     priceSlider.noUiSlider.set([priceStartValue, priceEndValue]);
+}
+
+if (isMobile.any()) {
+    const filterTitile = document.querySelector('.filter__title');
+    
+    filterTitile.addEventListener('click', function(e) {
+        filterTitile.classList.toggle('_active');
+        _slideToggle(filterTitile.nextElementSibling);
+    });
 }

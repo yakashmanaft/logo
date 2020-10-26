@@ -76,7 +76,7 @@ body {
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 //@import "datepicker";
 //@import "lightgallery";
-//@import "pagging";
+@import "pagging";
 @import "popup";
 @import "header";
 @import "footer";
@@ -176,7 +176,33 @@ body {
 		margin: 0px 0px 38px 0px;
 	}
 }
-
+.breadcrumps {
+	overflow: auto;
+	margin: 0px 0px 25px 0px;
+	height: 20px;
+	&__list {
+		display: flex;
+		align-items: center;
+		white-space: nowrap;
+		li {
+			padding: 0px 20px 0px 0px;
+			margin: 0px 10px 0px 0px;
+			background: url('../img/catalog/li_arrow.png') right / 10px no-repeat;
+			&:last-child {
+				margin: 0;
+				background: none;
+			}
+		}
+	}
+	&__link {
+		color: #1ab9ce;
+		text-decoration: underline;
+	}
+	&__item {
+		color: #999;
+		font-weight: 300;
+	}
+}
 //====================================================================================================================================================
 
 .menu-page {
@@ -612,12 +638,26 @@ body {
 		height: 57px;
 		margin: 0px auto 25px auto;
 		display: block;
+		&_catalog {
+			margin: 0;
+		}
 	}
 	&__footer {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
+	}
+	&__compare {
+		background: url(../img/catalog/compare.png) left no-repeat;
+		padding: 0px 0px 0px 35px;
+		line-height: 21px;
+		display: inline-block;
+		color: #fff;
+		span {
+			font-weight: 300;
+			border-bottom: 1px dashed;
+		}
 	}
 	&__old-price {
 		flex: 1 1 100%;
