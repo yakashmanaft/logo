@@ -234,6 +234,141 @@ if (document.querySelector('.brands-slider')) {
 		//},
 	});
 }
+
+if (document.querySelector('.images-product')) {
+	//Какой слайдер управляющий
+	let imagesSubSlider = new Swiper('.images-product__subslider', {
+		/*
+		effect: 'fade',
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		*/
+		observer: true,
+		observeParents: true,
+		slidesPerView: 4,
+		spaceBetween: 0,
+		// autoHeight: true,
+		speed: 800,
+		//touchRatio: 0,
+		//simulateTouch: false,
+		// loop: true,
+		//preloadImages: false,
+		//lazy: true,
+		// Dotts
+		// pagination: {
+		// 	el: '.products-slider__info',
+		// 	// clickable: true,
+		// 	type: 'fraction'
+		// },
+		// Arrows
+		// navigation: {
+		// 	nextEl: '.brands-slider__arrow_next',
+		// 	prevEl: '.brands-slider__arrow_prev',
+		// },
+		// breakpoints: {
+		// 	320: {
+		// 		slidesPerView: 1,
+		// 		// spaceBetween: 0,
+		// 		autoHeight: true,
+		// 	},
+		// 	480: {
+		// 		slidesPerView: 2,
+		// 		// spaceBetween: 20,
+		// 	},
+		// 	600: {
+		// 		slidesPerView: 3,
+		// 		// spaceBetween: 20,
+		// 	},
+		// 	768: {
+		// 		slidesPerView: 4,
+		// 		// spaceBetween: 20,
+		// 	},
+		// 	992: {
+		// 		slidesPerView: 5,
+		// 		// spaceBetween: 30,
+		// 	},
+		// },
+		on: {
+			lazyImageReady: function () {
+				ibg();
+			},
+		}
+		// And if we need scrollbar
+		//scrollbar: {
+		//	el: '.swiper-scrollbar',
+		//},
+	});
+	//Второй слайдер управляемый, в нем зашита опция thumbs
+	let imagesMainSlider = new Swiper('.images-product__mainslider', {
+		/*
+		effect: 'fade',
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		*/
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		spaceBetween: 0,
+		thumbs: {
+			swiper: imagesSubSlider // Указываем управляющий слайдер
+		},
+		// autoHeight: true,
+		speed: 800,
+		//touchRatio: 0,
+		//simulateTouch: false,
+		// loop: true,
+		//preloadImages: false,
+		//lazy: true,
+		// Dotts
+		// pagination: {
+		// 	el: '.products-slider__info',
+		// 	// clickable: true,
+		// 	type: 'fraction'
+		// },
+		// Arrows
+		// navigation: {
+		// 	nextEl: '.brands-slider__arrow_next',
+		// 	prevEl: '.brands-slider__arrow_prev',
+		// },
+		// breakpoints: {
+		// 	320: {
+		// 		slidesPerView: 1,
+		// 		// spaceBetween: 0,
+		// 		autoHeight: true,
+		// 	},
+		// 	480: {
+		// 		slidesPerView: 2,
+		// 		// spaceBetween: 20,
+		// 	},
+		// 	600: {
+		// 		slidesPerView: 3,
+		// 		// spaceBetween: 20,
+		// 	},
+		// 	768: {
+		// 		slidesPerView: 4,
+		// 		// spaceBetween: 20,
+		// 	},
+		// 	992: {
+		// 		slidesPerView: 5,
+		// 		// spaceBetween: 30,
+		// 	},
+		// },
+		on: {
+			lazyImageReady: function () {
+				ibg();
+			},
+		}
+		// And if we need scrollbar
+		//scrollbar: {
+		//	el: '.swiper-scrollbar',
+		//},
+	});
+
+}
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
